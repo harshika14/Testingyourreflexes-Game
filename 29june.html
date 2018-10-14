@@ -1,0 +1,56 @@
+<html>
+<head><title>tester</title>
+
+<style>
+#shape{
+width:200px;
+height:200px;
+background-color:blue;
+position:relative;
+
+}
+
+
+
+</style>
+</head>
+<body>
+<p>test your reflexes here</p>
+
+<p >time is <span id="timer"></span></p>
+ <div id="shape"></div>
+<script>
+
+
+var s= new Date().getTime();
+
+document.getElementById("shape").onclick=function onclick() {
+
+
+document.getElementById("shape").style.display="none" ;
+var e=new Date().getTime(); 
+var time =((e-s)/1000);
+s=e;
+document.getElementById("timer").innerHTML=time;
+ var a=Math.floor((Math.random()*2)+ 1); 
+ if( a==1){
+document.getElementById("shape").style.display="block" ;
+
+document.getElementById("shape").style.backgroundColor='rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')' ;
+document.getElementById("shape").style.top = Math.floor((Math.random() * 300) + 100);
+document.getElementById("shape").style.left = Math.floor((Math.random() * 1000) + 100);
+}
+else
+{ document.getElementById("shape").style.display="block";
+
+document.getElementById("shape").style.setProperty('border-radius', '50%' );
+document.getElementById("shape").style.top = Math.floor((Math.random() * 300) + 100);
+document.getElementById("shape").style.left = Math.floor((Math.random() * 1000) + 100);
+
+}
+}
+
+
+</script>
+</body>
+</html>
